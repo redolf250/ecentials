@@ -1,5 +1,10 @@
 package com.redolf.developer.ecentials.staff;
 
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-public interface StaffRepository {
+import java.math.BigInteger;
+
+@Repository
+public interface StaffRepository extends MongoRepository<Staff, BigInteger> {
 }

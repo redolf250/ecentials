@@ -1,12 +1,15 @@
 package com.redolf.developer.ecentials.staff;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 
-@Component
 public enum FacilityType {
     PHARMACY,
     LABORATORY,
     HOSPITAL,
-    SHOP
+    SHOP;
+
+    FacilityType() {
+    }
 }
