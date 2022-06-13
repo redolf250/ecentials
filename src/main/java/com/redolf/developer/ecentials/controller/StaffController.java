@@ -25,7 +25,7 @@ public class StaffController {
     })
     @GetMapping("/getStaffById/{staffId}")
     private ResponseEntity<?> getStaffById(@PathVariable("staffId") String Id){
-        return serviceImp.getStaffById(Id);
+        return this.serviceImp.getStaffById(Id);
     }
 
     @ApiOperation(value = "Returns list of all the staff members", notes = "Returns a list JSON objects")
@@ -36,7 +36,7 @@ public class StaffController {
             @ApiResponse(code = 404, message = "The url does not exist or maybe under upgrade"),
             @ApiResponse(code = 500, message = "The server encountered an unexpected condition that prevented it from fulfilling the request")
     })
-    @GetMapping("/getAllStaff")
+    @GetMapping("/getAllStaff/list")
     private ResponseEntity<?> getAllStaff(){
         return serviceImp.getAllStaff();
     }
@@ -51,7 +51,7 @@ public class StaffController {
     })
     @PostMapping("/createStaff")
     private ResponseEntity<?> createStaff(@RequestBody Staff staff){
-        return serviceImp.createStaff(staff);
+        return this.serviceImp.createStaff(staff);
     }
 
     @ApiOperation(value = "Updates a staff based on Id", notes = "Returns an updated JSON object")
@@ -64,7 +64,7 @@ public class StaffController {
     })
     @PutMapping("/updateStaff/{staffId}")
     private ResponseEntity<?> updateStaffById(@PathVariable("staffId") String staffId, @RequestBody Staff staff){
-        return serviceImp.updateStaffById(staffId,staff);
+        return this.serviceImp.updateStaffById(staffId,staff);
     }
 
     @ApiOperation(value = "Delete staff based on Id", notes = "Returns http response of 200")

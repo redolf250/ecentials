@@ -1,5 +1,6 @@
 package com.redolf.developer.ecentials.service;
 
+import com.redolf.developer.ecentials.exception.ResourceException;
 import com.redolf.developer.ecentials.methods.StaffService;
 import com.redolf.developer.ecentials.model.Staff;
 import com.redolf.developer.ecentials.repository.StaffRepository;
@@ -19,12 +20,16 @@ public class StaffServiceImp implements StaffService {
     private StaffRepository staffRepository;
 
     @Override
-    public ResponseEntity<?> createStaff(Staff staffDTO) {
-
+    public ResponseEntity<?> createStaff(Staff staffDTO){
          if (staffDTO.getEmployeeId() == null) {
              return new ResponseEntity<>(Response.error("creating"),HttpStatus.FORBIDDEN);
          }
-        staffRepository.insert(staffDTO);
+         try {
+             staffRepository.insert(staffDTO);
+         }catch (Exception e) {
+             throw new ResourceException(e.getMessage());
+         }
+
         return new ResponseEntity<>(Response.create("Staff"), HttpStatus.CREATED);
     }
 
@@ -44,7 +49,11 @@ public class StaffServiceImp implements StaffService {
             staffDTO.get().setFacilityType(staff.getFacilityType());
             staffDTO.get().setType(staff.getType());
             staffDTO.get().setTimestamp(staff.getTimestamp());
-            staffRepository.insert(staff);
+            try {
+                staffRepository.insert(staff);
+            }catch (Exception e) {
+                throw new ResourceException(e.getMessage());
+            }
             return new ResponseEntity<>(staff, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(Response.error("updating"), HttpStatus.NOT_FOUND);

@@ -18,6 +18,7 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @Data
 @ApiModel(description = "This is the model is used to perform operations on staff")
+
 public class Staff {
 
     @Id

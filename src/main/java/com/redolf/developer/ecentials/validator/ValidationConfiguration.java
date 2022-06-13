@@ -14,7 +14,9 @@ public class ValidationConfiguration {
         return new ValidatingMongoEventListener(validatorFactory());
     }
 
+    @Bean
     public LocalValidatorFactoryBean validatorFactory(){
         return new LocalValidatorFactoryBean();
     }
+
 }
