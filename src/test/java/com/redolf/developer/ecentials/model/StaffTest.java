@@ -3,7 +3,6 @@ package com.redolf.developer.ecentials.model;
 import com.redolf.developer.ecentials.facility.FacilityType;
 import com.redolf.developer.ecentials.repository.StaffRepository;
 import com.redolf.developer.ecentials.type.Type;
-import lombok.AllArgsConstructor;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalTime;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class StaffTest {

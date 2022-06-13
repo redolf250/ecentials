@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.math.BigInteger;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,7 +17,6 @@ import java.util.Optional;
 public class StaffServiceImp implements StaffService {
 
     private StaffRepository staffRepository;
-    private Staff staff;
 
     @Override
     public ResponseEntity<?> createStaff(Staff staffDTO) {

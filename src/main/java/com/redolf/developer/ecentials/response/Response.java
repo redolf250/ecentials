@@ -2,6 +2,7 @@ package com.redolf.developer.ecentials.response;
 
 import org.springframework.stereotype.Component;
 
+@SuppressWarnings("SameReturnValue")
 @Component
 public class Response {
 

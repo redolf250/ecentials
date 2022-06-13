@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class EcentialsApplication {
 
     public static void main(String[] args) {
+        //noinspection resource
         SpringApplication.run(EcentialsApplication.class, args);
     }
 
